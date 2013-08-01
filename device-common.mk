@@ -19,15 +19,6 @@
 #
 # Everything in this directory will become public
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/asus/flo-kernel/kernel
-else
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
-PRODUCT_COPY_FILES := \
-	$(LOCAL_KERNEL):kernel
-
 # PRODUCT_SHIPPING_API_LEVEL indicates the first api level the device has commercially launched on.
 PRODUCT_SHIPPING_API_LEVEL := 16
 
