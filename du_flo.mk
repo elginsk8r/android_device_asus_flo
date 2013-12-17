@@ -24,7 +24,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 # Inherit from our custom product configuration 
 $(call inherit-product, vendor/omni/config/common.mk)
 
-PRODUCT_NAME := omni_flo
+PRODUCT_NAME := du_flo
 PRODUCT_DEVICE := flo
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := Nexus 7 2013
