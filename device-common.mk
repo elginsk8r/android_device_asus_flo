@@ -19,6 +19,7 @@
 #
 # Everything in this directory will become public
 
+ifneq (ev_flo, $(TARGET_PRODUCT))
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/asus/flo-kernel/kernel
 else
@@ -27,6 +28,7 @@ endif
 
 PRODUCT_COPY_FILES := \
 	$(LOCAL_KERNEL):kernel
+endif
 
 # This device is xhdpi.  However the platform doesn't
 # currently contain all of the bitmaps at xhdpi density so
