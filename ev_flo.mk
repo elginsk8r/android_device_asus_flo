@@ -1,4 +1,5 @@
-# Copyright (C) 2016 The CyanogenMod Project
+#
+# Copyright (C) 2013 The Evervolv Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,8 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_mini_tablet_wifionly.mk)
+# Inherit some common evervolv stuff.
+$(call inherit-product, $(SRC_EVERVOLV_DIR)/config/common_full_tablet_wifionly.mk)
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
@@ -21,12 +22,24 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := flo
-PRODUCT_NAME := lineage_flo
-PRODUCT_BRAND := google
-PRODUCT_MODEL := Nexus 7
-PRODUCT_MANUFACTURER := asus
+# Extra overlay for Evervolv
+PRODUCT_PACKAGE_OVERLAYS += device/asus/flo/overlay_ev
+
+# Bootanimation
+BOOT_ANIMATION_SIZE := 1080p
+
+#
+# Evervolv product configuration.
+#
+PRODUCT_NAME    := ev_flo
+PRODUCT_BRAND   := Android
+PRODUCT_DEVICE  := flo
+PRODUCT_MODEL   := Nexus 7 2013
+PRODUCT_MANUFACTURER := ASUS
+PRODUCT_RESTRICT_VENDOR_FILES := false
+
+PRODUCT_CODENAME := Ferus
+PRODUCT_MOTD :="\n\n\n--------------------MESSAGE---------------------\nThank you for choosing Evervolv for your ASUS Nexus 7 2013\nPlease visit us at \#evervolv on irc.freenode.net\nFollow @preludedrew for the latest Evervolv updates\nGet the latest rom at evervolv.com\n------------------------------------------------\n"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=razor \
