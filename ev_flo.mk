@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_mini_tablet_wifionly.mk)
+# Inherit some common evervolv stuff.
+$(call inherit-product, $(SRC_EVERVOLV_DIR)/config/common_full_tablet_wifionly.mk)
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
@@ -22,17 +22,23 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Shipping API
-$(call inherit-product, vendor/lineage/build/target/product/product_launched_with_j_mr2.mk)
+PRODUCT_SHIPPING_API_LEVEL := 18
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := flo
-PRODUCT_NAME := lineage_flo
+PRODUCT_NAME    := ev_flo
 PRODUCT_BRAND := google
-PRODUCT_MODEL := Nexus 7
+PRODUCT_MODEL   := Nexus 7
 PRODUCT_MANUFACTURER := asus
+PRODUCT_RESTRICT_VENDOR_FILES := false
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=razor \
     PRIVATE_BUILD_DESC="razor-user 6.0.1 MOB30X 3036618 release-keys"
 
 BUILD_FINGERPRINT := google/razor/flo:6.0.1/MOB30X/3036618:user/release-keys
+
+# Extras for Evervolv
+BOOT_ANIMATION_SIZE := 1080p
+PRODUCT_CODENAME := Ferus
+PRODUCT_MOTD :="\n\n\n--------------------MESSAGE---------------------\nThank you for choosing Evervolv for your ASUS Nexus 7 2013\nPlease visit us at \#evervolv on irc.freenode.net\nFollow @preludedrew for the latest Evervolv updates\nGet the latest rom at evervolv.com\n------------------------------------------------\n"
