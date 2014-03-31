@@ -16,8 +16,10 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_flo.mk \
-    $(LOCAL_DIR)/full_flo.mk
+    $(LOCAL_DIR)/full_flo.mk \
+    $(LOCAL_DIR)/ev_flo.mk
 
 COMMON_LUNCH_CHOICES := \
 	aosp_flo-userdebug \
-	full_flo-userdebug
+	full_flo-userdebug \
+	ev_flo-userdebug
