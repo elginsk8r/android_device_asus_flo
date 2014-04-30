@@ -21,10 +21,11 @@
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
-# Inherit from our custom product configuration 
-$(call inherit-product, vendor/du/config/common.mk)
+# Inherit some common evervolv stuff.
+$(call inherit-product, vendor/ev/config/common_full_tablet_wifionly.mk)
 
-PRODUCT_NAME := du_flo
+
+PRODUCT_NAME := ev_flo
 PRODUCT_DEVICE := flo
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := Nexus 7 2013
@@ -41,3 +42,9 @@ TARGET_SELINUX_CONFIG := flo_defconfig
 $(call inherit-product, device/asus/flo/device.mk)
 $(call inherit-product-if-exists, vendor/asus/flo/device-vendor.mk)
 #$(call inherit-product-if-exists, vendor/qcom/proprietary/common/config/device-vendor.mk)
+
+# Set up the product codename, build version & MOTD.
+PRODUCT_CODENAME := Ferus
+PRODUCT_VERSION_DEVICE_SPECIFIC := p69
+
+PRODUCT_MOTD :="\n\n\n--------------------MESSAGE---------------------\nThank you for choosing Evervolv for your ASUS Nexus 7 2013\nPlease visit us at \#evervolv on irc.freenode.net\nFollow @preludedrew for the latest Evervolv updates\nGet the latest rom at evervolv.com\n-----------------------------------------------
