@@ -45,6 +45,13 @@ $(call inherit-product-if-exists, vendor/asus/flo/device-vendor.mk)
 
 # Set up the product codename, build version & MOTD.
 PRODUCT_CODENAME := Ferus
-PRODUCT_VERSION_DEVICE_SPECIFIC := p69
 
 PRODUCT_MOTD :="\n\n\n--------------------MESSAGE---------------------\nThank you for choosing Evervolv for your ASUS Nexus 7 2013\nPlease visit us at \#evervolv on irc.freenode.net\nFollow @preludedrew for the latest Evervolv updates\nGet the latest rom at evervolv.com\n-----------------------------------------------
+
+# Hot reboot
+PRODUCT_PACKAGE_OVERLAYS += \
+    vendor/ev/overlay/hot_reboot
+
+# Copy compatible prebuilt files
+PRODUCT_COPY_FILES +=  \
+    vendor/ev/prebuilt/1080p/media/bootanimation.zip:system/media/bootanimation.zip
