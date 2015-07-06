@@ -25,7 +25,6 @@ TARGET_CPU_VARIANT := krait
 TARGET_NO_BOOTLOADER := true
 
 BOARD_KERNEL_BASE := 0x80200000
-BOARD_KERNEL_IMAGE_NAME = zImage
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_USE_XZ := true
 BOARD_KERNEL_CMDLINE :=
@@ -38,8 +37,14 @@ BOARD_KERNEL_CMDLINE += androidboot.hardware=flo user_debug=31 msm_rtb.filter=0x
 BOARD_KERNEL_CMDLINE += vmalloc=340M
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
+ifeq ($(PRODUCT_KERNEL_VERSION),mainline)
+TARGET_KERNEL_SOURCE := kernel/android/common
+TARGET_KERNEL_CONFIG := qcom_defconfig
+BOARD_KERNEL_IMAGE_NAME = zImage-dtb
+else
 TARGET_KERNEL_SOURCE := kernel/asus/flo
 TARGET_KERNEL_CONFIG := flo_defconfig
+endif
 
 # QCOM Hardware
 BOARD_USES_QCOM_HARDWARE := true
