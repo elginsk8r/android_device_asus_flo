@@ -28,8 +28,13 @@ BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_IMAGE_NAME = zImage
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_USE_XZ := true
-# BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=msm8960 maxcpus=2
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=flo user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3
+BOARD_KERNEL_CMDLINE :=
+ifeq ($(PRODUCT_KERNEL_VERSION),mainline)
+BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200,n8
+else
+BOARD_KERNEL_CMDLINE += console=ttyHSL0,115200,n8
+endif
+BOARD_KERNEL_CMDLINE += androidboot.hardware=flo user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += vmalloc=340M
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
