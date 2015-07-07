@@ -32,6 +32,12 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
     
+ifeq ($(PRODUCT_KERNEL_VERSION),mainline)
+FSTAB_NAME := flo_mainline
+else
+FSTAB_NAME := flo
+endif
+
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.flo:$(TARGET_COPY_OUT_RAMDISK)/fstab.flo \
-    $(LOCAL_PATH)/rootdir/etc/fstab.flo:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.flo
+    $(LOCAL_PATH)/rootdir/etc/fstab.$(FSTAB_NAME):$(TARGET_COPY_OUT_RAMDISK)/fstab.flo \
+    $(LOCAL_PATH)/rootdir/etc/fstab.$(FSTAB_NAME):$(TARGET_COPY_OUT_VENDOR)/etc/fstab.flo

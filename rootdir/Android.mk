@@ -8,7 +8,11 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := fstab.flo
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := ETC
+ifeq ($(PRODUCT_KERNEL_VERSION),mainline)
+LOCAL_SRC_FILES := etc/fstab.flo_mainline
+else
 LOCAL_SRC_FILES := etc/fstab.flo
+endif
 LOCAL_MODULE_PATH := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
