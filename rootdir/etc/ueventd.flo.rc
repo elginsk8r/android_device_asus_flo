@@ -44,3 +44,4 @@
 /dev/gss                  0660   system     gps
 /dev/ks_hsic_bridge       0660   system     system
 /dev/efs_hsic_bridge      0660   system     system
+/dev/sw_sync              0660   root       graphics

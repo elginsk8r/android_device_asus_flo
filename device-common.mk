@@ -95,12 +95,30 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl \
-    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-impl
+
+ifneq ($(PRODUCT_KERNEL_VERSION),mainline)
+PRODUCT_PACKAGES += \
     libgenlock \
     hwcomposer.msm8960 \
     gralloc.msm8960 \
     copybit.msm8960 \
     memtrack.msm8960
+else
+PRODUCT_PACKAGES += \
+    gralloc.drm \
+    hwcomposer.drm \
+    libGLES_mesa \
+    libGLES_android \
+    memtrack.default \
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.gralloc=drm \
+    ro.hardware.hwcomposer=drm \
+    debug.sf.no_hw_vsync=1 \
+    hwc.drm.use_framebuffer_target=1 \
+    hwc.drm.use_overlay_planes=0
+endif
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -175,11 +193,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-nci-20791b05.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci-20791b05.conf
 
 # OMX
+ifneq ($(PRODUCT_KERNEL_VERSION),mainline)
 PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libOmxCore \
     libstagefrighthw
+endif
 
 # Permissions/features
 PRODUCT_COPY_FILES += \
@@ -237,6 +257,9 @@ PRODUCT_PACKAGES += \
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+ifeq ($(PRODUCT_KERNEL_VERSION),mainline)
+PRODUCT_SOONG_NAMESPACES += external/mesa3d
+endif
 
 # Thermal
 PRODUCT_COPY_FILES += \
