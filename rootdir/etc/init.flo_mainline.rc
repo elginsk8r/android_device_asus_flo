@@ -258,6 +258,7 @@ service rmt_storage /vendor/bin/rmt_storage
     class core
     user root
     group system wakelock
+    disabled
 
 service hciattach /vendor/bin/init.flo.bt.sh
     class late_start
@@ -309,11 +310,11 @@ service netmgrd /vendor/bin/netmgrd
     group radio wakelock
     disabled
 
-
 service sensors /vendor/bin/sensors.qcom
     class late_start
     user system
     group system wakelock
+    disabled
 
 on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
@@ -341,6 +342,7 @@ service qcamerasvr /vendor/bin/mm-qcamera-daemon
     class early_hal
     user camera
     group camera system inet input
+    disabled
 
 on property:sys.boot_completed=1
     start wcnss_init
