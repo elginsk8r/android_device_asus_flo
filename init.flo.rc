@@ -262,7 +262,7 @@ on property:ril.asus_debugger_running=1
 
 service netmgrd /vendor/bin/netmgrd
     class main
-    group radio
+    group radio wakelock
     disabled
 
 service sensors /vendor/bin/sensors.qcom
