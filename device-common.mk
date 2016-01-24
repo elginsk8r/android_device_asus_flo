@@ -291,6 +291,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-swap=false
 
+# IO Scheduler
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.io.scheduler=bfq
+
 PRODUCT_PACKAGES += \
     power.flo
 
