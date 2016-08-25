@@ -312,7 +312,6 @@ PRODUCT_COPY_FILES += \
     device/asus/flo/nfc/libnfc-brcm-20791b05.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-brcm-20791b05.conf
 
 $(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-heap.mk)
-$(call inherit-product, hardware/qcom/msm8960/msm8960.mk)
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
