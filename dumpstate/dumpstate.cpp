@@ -23,17 +23,18 @@ void dump_ks_bridges()
         char path[64], title[32];
         sprintf(path, "/sys/kernel/debug/ks_bridge/ks_bridge:%d", i);
         sprintf(title, "KS BRIDGE LOG#%d", i);
-        dump_file(title, path);
+        ds.DumpFile(title, path);
     }
 }
 
 void dumpstate_board()
 {
-    dump_file("INTERRUPTS", "/proc/interrupts");
+    Dumpstate& ds = Dumpstate::GetInstance();
+    ds.DumpFile("INTERRUPTS", "/proc/interrupts");
     dump_ks_bridges();
-    dump_file("eMMC manfid",
+    ds.DumpFile("eMMC manfid",
         "/sys/devices/platform/msm_sdcc.1/mmc_host/mmc0/mmc0:0001/manfid");
-    dump_file("eMMC capacity",
+    ds.DumpFile("eMMC capacity",
         "/sys/devices/platform/msm_sdcc.1/mmc_host/mmc0/mmc0:0001/sec_count");
-    dump_file("Touch firmware version", "/sys/class/switch/touch/name");
+    ds.DumpFile("Touch firmware version", "/sys/class/switch/touch/name");
 };
