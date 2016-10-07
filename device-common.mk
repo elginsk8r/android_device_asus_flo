@@ -255,7 +255,8 @@ PRODUCT_PACKAGES += \
     libnfc-nci \
     libnfc_nci_jni \
     NfcNci \
-    Tag
+    Tag \
+    android.hardware.nfc@1.0-impl
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
