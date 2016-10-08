@@ -280,7 +280,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-swap=false
 
 PRODUCT_PACKAGES += \
-    power.flo
+    power.flo \
+    android.hardware.power@1.0-impl
 
 # NFC packages
 PRODUCT_PACKAGES += \
