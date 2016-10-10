@@ -49,7 +49,8 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf
 
 PRODUCT_PACKAGES += \
-	lights.msm8960
+	lights.msm8960 \
+	android.hardware.light@2.0-impl
 
 PRODUCT_PACKAGES += \
     charger_res_images
