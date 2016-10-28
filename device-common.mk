@@ -73,6 +73,9 @@ PRODUCT_COPY_FILES += \
 	device/asus/flo/mixer_paths.xml:system/etc/mixer_paths.xml \
 	device/asus/flo/sec_config:system/etc/sec_config
 
+PRODUCT_PACKAGES += \
+	android.hardware.thermal@1.0-impl
+
 PRODUCT_COPY_FILES += \
 	device/asus/flo/thermald-flo.conf:system/etc/thermald.conf
 
