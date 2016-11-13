@@ -153,7 +153,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera Configuration
 PRODUCT_PROPERTY_OVERRIDES += \
-	camera.disable_zsl_mode=1
+	camera.disable_zsl_mode=1 \
+	media.stagefright.legacyencoder=true \
+	media.stagefright.less-secure=true
 
 #Enable MDP composition by default
 PRODUCT_PROPERTY_OVERRIDES += \
