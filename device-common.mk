@@ -18,6 +18,7 @@
 # are also specific to msm8960 devices
 #
 # Everything in this directory will become public
+$(call inherit-product-if-exists, vendor/asus/flo/flo-vendor.mk)
 
 ifneq (ev_flo, $(TARGET_PRODUCT))
 ifeq ($(TARGET_PREBUILT_KERNEL),)

@@ -123,3 +123,5 @@ USE_MINIKIN := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
+
+-include vendor/asus/flo/BoardConfigVendor.mk
