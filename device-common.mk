@@ -98,6 +98,8 @@ PRODUCT_COPY_FILES += \
 	device/asus/flo/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml
 
 PRODUCT_COPY_FILES += \
+	device/asus/flo/init.qcom.devwait.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.devwait.sh \
+	device/asus/flo/init.qcom.devstart.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.devstart.sh \
 	device/asus/flo/kickstart_checker.sh:$(TARGET_COPY_OUT_VENDOR)/bin/kickstart_checker.sh
 
 # Prebuilt kl and kcm keymaps
