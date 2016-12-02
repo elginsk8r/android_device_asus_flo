@@ -228,7 +228,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # GPS
 PRODUCT_PACKAGES += \
         gps.conf \
-        gps.msm8960
+        gps.msm8960 \
+	android.hardware.gnss@1.0-impl
 
 PRODUCT_PACKAGES += \
 	bdAddrLoader \
