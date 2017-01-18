@@ -176,6 +176,10 @@ PRODUCT_PACKAGES += \
 	audio.r_submix.default \
 	libaudio-resampler
 
+PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl
+
 # Voice processing
 PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
