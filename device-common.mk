@@ -182,7 +182,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.audio.monitorRotation=true
 
 PRODUCT_PACKAGES += \
-	hci_qcomm_init
+	hci_qcomm_init \
+	android.hardware.bluetooth@1.0-impl
 
 PRODUCT_COPY_FILES += \
 	device/asus/flo/init.flo.bt.sh:system/bin/init.flo.bt.sh
