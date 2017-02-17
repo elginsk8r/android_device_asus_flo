@@ -1,0 +1,15 @@
+# Interact with sockets
+unix_socket_send(hal_camera, camera, camera)
+allow hal_camera camera_data_file:sock_file write;
+allow hal_camera property_socket:sock_file { open read write ioctl };
+allow hal_camera init:unix_stream_socket connectto;
+
+allow hal_camera system_file:file execmod;
+allow hal_camera camera_device:chr_file { open read write ioctl };
+allow hal_camera hal_camera:fd use;
+
+# Allow writing to mpdecision
+unix_socket_send(hal_camera, mpdecision, mpdecision)
+
+# Allow access to sysfs
+allow hal_camera sysfs:file { getattr read open };
