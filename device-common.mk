@@ -164,6 +164,7 @@ PRODUCT_PACKAGES += \
 	keystore.msm8960 \
 	memtrack.msm8960 \
 	android.hardware.graphics.allocator@2.0-impl \
+	android.hardware.graphics.allocator@2.0-service \
 	android.hardware.graphics.mapper@2.0-impl
 
 PRODUCT_PACKAGES += \
