@@ -204,6 +204,9 @@ PRODUCT_PACKAGES += \
 	libOmxCore \
 	libstagefrighthw
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.media.treble_omx=false
+
 # GPS
 PRODUCT_PACKAGES += \
         gps.conf \
