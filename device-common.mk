@@ -162,7 +162,9 @@ PRODUCT_PACKAGES += \
 	gralloc.msm8960 \
 	copybit.msm8960 \
 	keystore.msm8960 \
-	memtrack.msm8960
+	memtrack.msm8960 \
+	android.hardware.graphics.allocator@2.0-impl \
+	android.hardware.graphics.mapper@2.0-impl
 
 PRODUCT_PACKAGES += \
 	audio.primary.msm8960 \
