@@ -183,6 +183,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PACKAGES += \
 	hci_qcomm_init \
+	libbt-vendor \
 	android.hardware.bluetooth@1.0-impl
 
 PRODUCT_COPY_FILES += \
