@@ -111,6 +111,7 @@ USE_CLANG_PLATFORM_BUILD := true
 TARGET_FS_CONFIG_GEN += device/asus/flo/config.fs
 
 DEVICE_MANIFEST_FILE := device/asus/flo/manifest.xml
+DEVICE_MATRIX_FILE := device/asus/flo/compatibility_matrix.xml
 
 # Enable Minikin text layout engine (will be the default soon)
 USE_MINIKIN := true
