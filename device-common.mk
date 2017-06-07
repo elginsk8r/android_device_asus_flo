@@ -221,6 +221,7 @@ PRODUCT_COPY_FILES += \
 	device/asus/flo/init.flo.bt.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.flo.bt.sh
 
 PRODUCT_PROPERTY_OVERRIDES += \
+	ro.bluetooth.hfp.ver=1.6 \
 	ro.qualcomm.bt.hci_transport=smd
 
 PRODUCT_PACKAGES += \
