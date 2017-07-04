@@ -125,8 +125,6 @@ HAVE_ADRENO_SOURCE:= false
 
 BOARD_SEPOLICY_DIRS += device/asus/flo/sepolicy
 
-USE_CLANG_PLATFORM_BUILD := true
-
 TARGET_FS_CONFIG_GEN += device/asus/flo/config.fs
 
 DEVICE_MANIFEST_FILE := device/asus/flo/manifest.xml
