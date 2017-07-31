@@ -166,6 +166,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.hwc.mdpcomp.enable=true
 
+# Disable EGL buffer_age extension support
+PRODUCT_PROPERTY_OVERRIDES += \
+	debug.hwui.use_buffer_age=false
+
 PRODUCT_CHARACTERISTICS := tablet,nosdcard
 
 PRODUCT_PACKAGES += \
