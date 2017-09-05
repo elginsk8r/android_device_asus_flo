@@ -272,8 +272,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
         ro.qc.sensors.wl_dis=true \
         ro.qualcomm.sensors.smd=true
 
+# Sensors
+PRODUCT_COPY_FILES += \
+	device/asus/flo/_hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/_hals.conf
+
 PRODUCT_PACKAGES += \
-	android.hardware.sensors@1.0-impl
+	android.hardware.sensors@1.0-impl \
+	sensors.msm8960
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.qualcomm.cabl=1 \
