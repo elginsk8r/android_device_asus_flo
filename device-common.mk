@@ -152,6 +152,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.sf.lcd_density=320
 
+PRODUCT_PROPERTY_OVERRIDES += \
+	debug.sf.latch_unsignaled=1
+
 # Audio Configuration
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.audio.handset.mic=dmic \
