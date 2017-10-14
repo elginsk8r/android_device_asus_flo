@@ -26,6 +26,10 @@ PRODUCT_COPY_FILES := \
     device/asus/flo/fstab.flo:root/fstab.flo \
     device/asus/flo/init.flo.rc:root/init.flo.rc
 
+# Dumpstate HAL
+PRODUCT_PACKAGES += \
+    android.hardware.dumpstate@1.0-service.flo
+
 PRODUCT_PACKAGES += \
     camera.flo
 
