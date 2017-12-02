@@ -64,7 +64,7 @@ PRODUCT_COPY_FILES += \
 	device/asus/flo/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
 	device/asus/flo/WCNSS_qcom_wlan_nv_flo.bin:system/etc/wifi/WCNSS_qcom_wlan_nv_flo.bin \
 	device/asus/flo/WCNSS_qcom_wlan_nv_deb.bin:system/etc/wifi/WCNSS_qcom_wlan_nv_deb.bin \
-	device/asus/flo/init.flo.wifi.sh:system/bin/init.flo.wifi.sh
+	device/asus/flo/init.flo.wifi.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.flo.wifi.sh
 
 PRODUCT_COPY_FILES += \
 	device/asus/flo/audio_policy.conf:system/etc/audio_policy.conf
@@ -209,7 +209,7 @@ PRODUCT_PACKAGES += \
 	android.hardware.bluetooth@1.0-impl
 
 PRODUCT_COPY_FILES += \
-	device/asus/flo/init.flo.bt.sh:system/bin/init.flo.bt.sh
+	device/asus/flo/init.flo.bt.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.flo.bt.sh
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.qualcomm.bt.hci_transport=smd
