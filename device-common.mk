@@ -202,7 +202,7 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libqcomvoiceprocessingdescriptors
 PRODUCT_COPY_FILES += \
-    device/asus/flo/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.conf
+    device/asus/flo/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
 # Monitor device rotation for speaker channel swap
 PRODUCT_PROPERTY_OVERRIDES += \
