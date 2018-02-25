@@ -260,6 +260,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	media.aac_51_output_enabled=true
 
+# Increase media volume steps
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.config.media_vol_steps=25
+
 PRODUCT_PROPERTY_OVERRIDES += \
         debug.egl.recordable.rgba8888=1
 
