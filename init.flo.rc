@@ -35,11 +35,11 @@ on init
     write /proc/sys/vm/page-cluster 0
 
 on fs
-    mount_all ./fstab.flo --early
-    restorecon_recursive /persist
-
     # Start HW service manager early
     start hwservicemanager
+
+    mount_all ./fstab.flo --early
+    restorecon_recursive /persist
 
 on late-fs
     # Start services for bootanim
@@ -48,6 +48,10 @@ on late-fs
     start configstore-hal-1-0
     start gralloc-2-0
 
+    # Wait for hwservicemanager ready since fsck might be triggered in mount_all --late
+    # In such case, init won't responce the property_set from hwservicemanager and then
+    # cause services for bootanim not running.
+    wait_for_prop hwservicemanager.ready true
     mount_all ./fstab.flo --late
 
 on early-boot
