@@ -24,6 +24,7 @@ LOCAL_C_INCLUDES := \
 	$(LOCAL_PATH) \
 	$(TARGET_OUT_HEADERS)/common/inc
 LOCAL_SHARED_LIBRARIES := libcutils liblog
+LOCAL_CFLAGS += -Wall -Wextra -Werror
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := qcom
 LOCAL_MODULE := bdAddrLoader
