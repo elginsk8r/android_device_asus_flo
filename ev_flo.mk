@@ -19,9 +19,6 @@ $(call inherit-product, device/asus/flo/aosp_flo.mk)
 # Inherit some common evervolv stuff.
 $(call inherit-product, $(SRC_EVERVOLV_DIR)/config/common_full_tablet_wifionly.mk)
 
-# Pull all dictionaries
-$(call inherit-product, $(SRC_EVERVOLV_DIR)/config/dictionaries/intl.mk)
-
 # Extra overlay for Evervolv
 PRODUCT_PACKAGE_OVERLAYS += device/asus/flo/overlay_ev
 
