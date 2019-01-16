@@ -23,7 +23,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.carrier=wifi-only
 
 PRODUCT_COPY_FILES := \
-    device/asus/flo/fstab.flo:root/fstab.flo \
+    device/asus/flo/fstab.flo:$(TARGET_COPY_OUT_RAMDISK)/fstab.flo \
     device/asus/flo/init.flo.rc:root/init.flo.rc
 
 # Dumpstate HAL
