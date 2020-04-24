@@ -260,6 +260,7 @@ PRODUCT_PACKAGES += \
     wificond \
     hostapd \
     libwfcu \
+    WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
 
