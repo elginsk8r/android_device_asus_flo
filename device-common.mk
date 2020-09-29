@@ -204,6 +204,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
     power.flo
+    
+# Healthd
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.0-service
 
 # Ramdisk
 PRODUCT_PACKAGES += \
