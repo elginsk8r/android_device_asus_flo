@@ -331,3 +331,7 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl
+
+# Filesystem tools
+PRODUCT_PACKAGES += \
+    resize2fs_static    

@@ -222,6 +222,8 @@ def WriteBootloader(info, bootloader):
   except KeyError:
     pass
 
+def FullOTA_PostValidate(info):
+    info.script.AppendExtra('run_program("/tmp/install/bin/resize2fs_static", "-f", "/dev/block/platform/msm_sdcc.1/by-name/system");');
 
 def trunc_to_null(s):
   if '\0' in s:
