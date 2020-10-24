@@ -52,7 +52,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
 	lights.msm8960 \
-	android.hardware.light@2.0-impl
+	android.hardware.light@2.0-impl \
+	android.hardware.light@2.0-service
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
