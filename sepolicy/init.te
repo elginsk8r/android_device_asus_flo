@@ -8,7 +8,6 @@ allow init tmpfs:lnk_file create;
 
 allow init {
     sysfs_devices_system_cpu
-    sysfs_livedisplay_tuneable
     sysfs_mpdecision
     sysfs_msm_subsys
     sysfs_net
