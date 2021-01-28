@@ -21,7 +21,7 @@
 #include <errno.h>
 
 // The "real" sensor lib to wrap around
-#define SENSOR_LIB "sensors.flox.so"
+#define SENSOR_LIB "sensors.flo.so"
 
 // Enable experimental flush support
 #define FLUSH_SUPPORT

@@ -1,4 +1,4 @@
-import /init.recovery.flox.usb.rc
+import /init.recovery.flo.usb.rc
 
 on fs
     wait /dev/block/platform/msm_sdcc.1

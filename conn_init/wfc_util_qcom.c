@@ -551,12 +551,12 @@ int wfc_util_qcom_check_config(unsigned char *nv_mac_addr)
 	char nv_bin_tempfile_name[50];
 	char baseband[PROPERTY_VALUE_MAX];
 
-	// Default use WCNSS_qcom_wlan_nv_flox.bin
+	// Default use WCNSS_qcom_wlan_nv_flo.bin
 	property_get("ro.boot.baseband", baseband, "apq");
 	if(!strncmp(baseband, "apq", 3)) {
-		sprintf(nv_bin_tempfile_name, "/vendor/etc/wifi/WCNSS_qcom_wlan_nv_flox.bin");
+		sprintf(nv_bin_tempfile_name, "/vendor/etc/wifi/WCNSS_qcom_wlan_nv_flo.bin");
 	} else if( !strncmp(baseband, "mdm", 3)){
-		sprintf(nv_bin_tempfile_name, "/vendor/etc/wifi/WCNSS_qcom_wlan_nv_debx.bin");
+		sprintf(nv_bin_tempfile_name, "/vendor/etc/wifi/WCNSS_qcom_wlan_nv_deb.bin");
 	}
 	wfc_util_log_error("nv bin : %s", nv_bin_tempfile_name);
 

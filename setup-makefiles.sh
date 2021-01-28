@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE=flox
+DEVICE=flo
 VENDOR=asus
 
 # Load extract_utils and do some sanity checks
