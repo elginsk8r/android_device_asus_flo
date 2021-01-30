@@ -150,10 +150,6 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service \
     lights.msm8960
 
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sysfs
-
 # Trust
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
