@@ -61,9 +61,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.flo.bt.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.flo.bt.sh
 
 # Bluetooth HAL
+ifneq ($(PRODUCT_KERNEL_VERSION),mainline)
 PRODUCT_PACKAGES += \
     libbt-vendor \
     android.hardware.bluetooth@1.0-impl
+else
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.1-service.btlinux
+endif
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920

@@ -39,8 +39,10 @@ BOARD_KERNEL_CMDLINE += vmalloc=340M
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 ifeq ($(PRODUCT_KERNEL_VERSION),mainline)
+BOARD_CUSTOM_BOOTIMG := true
+BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 TARGET_KERNEL_SOURCE := kernel/android/common
-TARGET_KERNEL_CONFIG := qcom_defconfig
+TARGET_KERNEL_CONFIG := qcom_android_defconfig
 else
 TARGET_KERNEL_SOURCE := kernel/asus/flo
 TARGET_KERNEL_CONFIG := flo_defconfig
@@ -65,8 +67,10 @@ TARGET_VNDK_USE_CORE_VARIANT := true
 TARGET_HAS_MEMFD_BACKPORT := true
 
 BOARD_HAVE_BLUETOOTH := true
+ifneq ($(PRODUCT_KERNEL_VERSION),mainline)
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
+endif
 
 TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_PLATFORM := msm8960
